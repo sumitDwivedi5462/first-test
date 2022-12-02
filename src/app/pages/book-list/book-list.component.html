@@ -1,0 +1,31 @@
+<div class="container p-2">
+
+    <div class="row p-2">
+        <input type="text" placeholder="Search by book name" class="col-md-3 form-control" (input)="filterBooks($event.target)">
+    </div>
+
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Book Price</th>
+        <th scope="col">Book Category</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ book.bookName }}</td>
+        <td>{{ book.bookPrice }}</td>
+        <td>{{ book.bookCategory }}</td>
+        <td>{{ book.inCart ? 'Added in cart' : '--' }}</td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="addToCart(book._id)">Add to cart</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
