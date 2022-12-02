@@ -23,7 +23,7 @@
         <td>{{ book.bookCategory }}</td>
         <td>{{ book.inCart ? 'Added in cart' : '--' }}</td>
         <td>
-          <button type="button" class="btn btn-primary" (click)="addToCart(book._id)">Add to cart</button>
+          <button type="button" class="btn btn-primary" (click)="addToCart(book._id)">{{ !book.inCart ? 'Add to' : 'Remove from'}} cart</button>
         </td>
       </tr>
     </tbody>
